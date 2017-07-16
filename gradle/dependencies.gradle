@@ -1,0 +1,30 @@
+ext {
+    appLibs = [:]
+    appPlugins = [:]
+}
+
+appLibs += [
+        lombok                : "org.projectlombok:lombok:$lombokVersion",
+        logbackCore           : "ch.qos.logback:logback-core:$logbackVersion",
+        logbackClassic        : "ch.qos.logback:logback-classic:$logbackVersion",
+        logbackAccess         : "ch.qos.logback:logback-access:$logbackVersion",
+        commonLang3           : "org.apache.commons:commons-lang3:$commonLang3Version",
+        junit                 : "junit:junit:$junitVersion",
+        assertj               : "org.assertj:assertj-core:$assertjVersion",
+        groovyAll             : "org.codehaus.groovy:groovy-all:$groovyAllVersion",
+        spockCore             : "org.spockframework:spock-core:$spockVersion",
+        jaxRs1Api             : "javax.ws.rs:jsr311-api:$jaxRs1ApiVersion",
+        jaxRs2Api             : "javax.ws.rs:javax.ws.rs-api:$jaxRs2ApiVersion",
+        logbackLogstashEncoder: "net.logstash.logback:logstash-logback-encoder:$logbackLogstashEncoderVersion",
+        janino                : "org.codehaus.janino:janino:$janinoVersion",
+        scalaLibrary          : "org.scala-lang:scala-library:$scalaVersion",
+        scalaTest             : "org.scalatest:scalatest_2.12:$scalaTestVersion",
+        pegdownTest           : "org.pegdown:pegdown:$pegdownVersion",
+        akkaHttpTestKit       : "com.typesafe.akka:akka-http-testkit_2.12:$akkaHttpTestKitVersion",
+        specs2                : "org.specs2:specs2_2.12:$specs2Version"
+]
+
+appPlugins += [
+
+]
+

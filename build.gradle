@@ -1,0 +1,83 @@
+buildscript {
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath "gradle.plugin.com.github.maiflai:gradle-scalatest:0.16"
+    }
+}
+
+plugins {
+    id "io.spring.dependency-management" version "1.0.2.RELEASE"
+}
+
+apply from: "$rootDir/gradle/dependencies.gradle"
+
+allprojects {
+    apply plugin: 'idea'
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        jcenter()
+        mavenRepoUrl.split(',').each { repoUrl -> maven { url repoUrl } }
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'maven-publish'
+
+    sourceCompatibility = 1.8
+
+    compileJava {
+        options.encoding = 'UTF-8'
+    }
+
+    archivesBaseName = "oms-${it.name}"
+
+    sourceSets {
+        test {
+            java.srcDirs = ['src/test/java', 'src/test/groovy']
+        }
+    }
+
+    dependencies {
+        compile("$appLibs.lombok")
+        compile("$appLibs.logbackCore")
+        compile("$appLibs.logbackClassic")
+        compile("$appLibs.logbackAccess")
+        compile("$appLibs.logbackLogstashEncoder")
+        compile("$appLibs.commonLang3")
+
+        testCompile("$appLibs.junit")
+        testCompile("$appLibs.assertj")
+        compile("$appLibs.groovyAll")
+        testCompile("$appLibs.spockCore")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+        }
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) { from components.java }
+        }
+    }
+
+    jar {
+        into("META-INF/maven/$project.group/$project.name") {
+            from { generatePomFileForMavenJavaPublication }
+            rename ".*", "pom.xml"
+        }
+    }
+
+}
