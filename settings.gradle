@@ -1,1 +1,5 @@
 rootProject.name = 'devbhuwan-cloud-starters'
+include 'cloud-service-starter'
+include 'cloud-service:cloud-service-starter'
+findProject(':cloud-service:cloud-service-starter')?.name = 'cloud-service-starter'
+
