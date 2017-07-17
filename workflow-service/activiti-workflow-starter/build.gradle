@@ -1,7 +1,8 @@
 dependencies {
     compile("org.springframework.boot:spring-boot-autoconfigure")
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.cloud:spring-cloud-starter")
+    compile("org.activiti:activiti-spring-boot-starter-basic:$activitiVersion")
+    //compile("org.activiti:activiti-spring-boot-starter-rest-api:$activitiVersion")
 }
+
 compileJava.dependsOn(processResources)

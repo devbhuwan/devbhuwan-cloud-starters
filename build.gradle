@@ -40,7 +40,7 @@ subprojects {
         options.encoding = 'UTF-8'
     }
 
-    archivesBaseName = "oms-${it.name}"
+    archivesBaseName = "devbhuwan-${it.name}"
 
     sourceSets {
         test {
@@ -50,10 +50,6 @@ subprojects {
 
     dependencies {
         compile("$appLibs.lombok")
-        compile("$appLibs.logbackCore")
-        compile("$appLibs.logbackClassic")
-        compile("$appLibs.logbackAccess")
-        compile("$appLibs.logbackLogstashEncoder")
         compile("$appLibs.commonLang3")
 
         testCompile("$appLibs.junit")
@@ -65,6 +61,7 @@ subprojects {
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1"
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:1.5.4.RELEASE"
         }
     }
 
