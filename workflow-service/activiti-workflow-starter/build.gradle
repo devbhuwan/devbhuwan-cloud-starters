@@ -3,6 +3,7 @@ dependencies {
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
     compile("org.activiti:activiti-spring-boot-starter-basic:$activitiVersion")
     //compile("org.activiti:activiti-spring-boot-starter-rest-api:$activitiVersion")
+    compile project(":workflow-service:workflow-model")
 }
 
 compileJava.dependsOn(processResources)

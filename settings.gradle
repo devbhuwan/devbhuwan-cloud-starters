@@ -1,7 +1,9 @@
 rootProject.name = 'devbhuwan-cloud-starters'
+include 'cloud-service:cloud-service-starter'
 findProject(':cloud-service:cloud-service-starter')?.name = 'cloud-service-starter'
 include 'cloud-service:examples:cloud-service-starter-example'
 findProject(':cloud-service:examples:cloud-service-starter-example')?.name = 'cloud-service-starter-example'
+
 include 'workflow-service:activiti-workflow-starter'
 findProject(':workflow-service:activiti-workflow-starter')?.name = 'activiti-workflow-starter'
 include 'workflow-service:workflow-model'
