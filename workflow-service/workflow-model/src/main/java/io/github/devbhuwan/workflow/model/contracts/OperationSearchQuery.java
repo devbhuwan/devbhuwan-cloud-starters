@@ -6,14 +6,11 @@ import org.immutables.value.Value;
  * @author Bhuwan Upadhyay
  */
 @Value.Immutable
-public interface Operation {
+public interface OperationSearchQuery {
 
-    String key();
+    String processInstanceId();
 
-    String label();
+    String userId();
 
-    String taskKey();
-
-    String taskName();
-
+    OperationRole userRole();
 }

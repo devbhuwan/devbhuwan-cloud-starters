@@ -6,14 +6,7 @@ import org.immutables.value.Value;
  * @author Bhuwan Upadhyay
  */
 @Value.Immutable
-public interface Operation {
+public interface WorkflowProcessInfo {
 
-    String key();
-
-    String label();
-
-    String taskKey();
-
-    String taskName();
-
+    String processInstanceId();
 }

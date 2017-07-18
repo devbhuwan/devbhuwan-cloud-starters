@@ -8,8 +8,8 @@ import java.util.Map;
  */
 public interface WorkflowProcessService {
 
-    void startProcess(String processDefinitionId, Map<String, Object> variables);
+    WorkflowProcessInfo startProcess(String processDefinitionId, Map<String, Object> variables);
 
-    List<Operation> operations(String processDefinitionId, String state);
+    List<Operation> operations(OperationSearchQuery searchQuery);
 
 }
