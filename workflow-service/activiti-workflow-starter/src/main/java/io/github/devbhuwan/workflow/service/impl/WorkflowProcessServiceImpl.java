@@ -19,7 +19,7 @@ public class WorkflowProcessServiceImpl implements WorkflowProcessService {
     @Override
     public void startProcess(String processDefinitionId, Map<String, Object> variables) {
         log.info("Workflow Process Started [processDefinitionId={}]", processDefinitionId);
-        runtimeService.startProcessInstanceById(processDefinitionId, variables);
+        runtimeService.startProcessInstanceByKey(processDefinitionId, variables);
     }
 
 }
