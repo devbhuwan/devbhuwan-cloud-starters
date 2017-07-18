@@ -12,7 +12,7 @@ public interface Operation {
 
     String label();
 
-    String taskKey();
+    String taskId();
 
     String taskName();
 

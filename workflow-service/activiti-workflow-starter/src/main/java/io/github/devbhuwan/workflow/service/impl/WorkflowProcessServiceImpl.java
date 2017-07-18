@@ -46,10 +46,15 @@ public class WorkflowProcessServiceImpl implements WorkflowProcessService {
                 .map(task -> ImmutableOperation.builder()
                         .key("")
                         .label("")
-                        .taskKey(task.getTaskDefinitionKey())
+                        .taskId(task.getId())
                         .taskName(task.getName())
                         .build())
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void executeTask(Operation operation, Map<String, Object> variables) {
+        taskService.complete(operation.taskId());
     }
 
 }

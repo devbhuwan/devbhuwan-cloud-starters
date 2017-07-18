@@ -12,4 +12,5 @@ public interface WorkflowProcessService {
 
     List<Operation> operations(OperationSearchQuery searchQuery);
 
+    void executeTask(Operation operation, Map<String, Object> variables);
 }
