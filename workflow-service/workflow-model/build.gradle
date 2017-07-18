@@ -1,0 +1,6 @@
+apply plugin: "net.ltgt.apt"
+
+dependencies {
+    apt "org.immutables:value:$immutablesVersion"
+    compileOnly "org.immutables:value:$immutablesVersion:annotations"
+}

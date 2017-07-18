@@ -1,5 +1,6 @@
 package io.github.devbhuwan.workflow.model.contracts;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -8,4 +9,7 @@ import java.util.Map;
 public interface WorkflowProcessService {
 
     void startProcess(String processDefinitionId, Map<String, Object> variables);
+
+    List<Operation> operations(String processDefinitionId, String state);
+
 }
