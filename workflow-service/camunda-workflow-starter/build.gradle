@@ -3,8 +3,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("com.h2database:h2")
     compileOnly("org.springframework.boot:spring-boot-configuration-processor")
-    compile("org.activiti:activiti-spring-boot-starter-basic:$activitiVersion")
-    compile("org.activiti:activiti-spring-boot-starter-rest-api:$activitiVersion")
+    compile("org.camunda.bpm.extension.springboot:camunda-bpm-spring-boot-starter:$camundaBpmSpringBootVersion")
     testCompile("org.springframework.boot:spring-boot-starter-test")
     compile("io.github.devbhuwan:devbhuwan-workflow-model:$devbhuwanCloudStarter")
 }

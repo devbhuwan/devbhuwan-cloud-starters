@@ -8,4 +8,6 @@ include 'workflow-service:activiti-workflow-starter'
 findProject(':workflow-service:activiti-workflow-starter')?.name = 'activiti-workflow-starter'
 include 'workflow-service:workflow-model'
 findProject(':workflow-service:workflow-model')?.name = 'workflow-model'
+include 'workflow-service:camunda-workflow-starter'
+findProject(':workflow-service:camunda-workflow-starter')?.name = 'camunda-workflow-starter'
 
